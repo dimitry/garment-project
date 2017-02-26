@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="250px" height="150px" viewBox="0 0 250 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard Copy 6</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="52.4516 0.0002 0 0.0002 0 52.4512 52.4516 52.4512 52.4516 0.0002"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-Copy-6">
+            <g id="Page-1" transform="translate(99.000000, 49.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M26.2256,35.1015 C31.2216,35.1015 35.2696,31.0525 35.2696,26.0585 C35.2696,21.0625 31.2216,17.0135 26.2256,17.0135 C21.2306,17.0135 17.1806,21.0625 17.1806,26.0585 C17.1806,31.0525 21.2306,35.1015 26.2256,35.1015 M26.2256,43.6445 C35.8456,43.6445 43.6446,35.8455 43.6446,26.2265 C43.6446,16.6055 35.8456,8.8065 26.2256,8.8065 C16.6056,8.8065 8.8066,16.6055 8.8066,26.2265 C8.8066,35.8455 16.6056,43.6445 26.2256,43.6445 M-0.0004,26.2265 C-0.0004,11.7405 11.7406,-0.0005 26.2256,-0.0005 C40.7096,-0.0005 52.4516,11.7405 52.4516,26.2265 C52.4516,40.7065 40.7096,52.4515 26.2256,52.4515 C11.7406,52.4515 -0.0004,40.7065 -0.0004,26.2265" id="Fill-1" fill="#4C586F" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

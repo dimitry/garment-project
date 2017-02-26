@@ -1,0 +1,868 @@
+@import 'base';
+@import 'vars';
+
+// Mixins
+@mixin breakpoint($point) {
+  @if $point == small-screen-up {
+    @media (min-width: $small-screen) { @content; }
+  }
+  @else if $point == medium-screen-up {
+    @media (min-width: $medium-screen) { @content; }
+  }
+  @else if $point == large-screen-up {
+    @media (min-width: $large-screen) { @content; }
+  }
+}
+
+// Breakpoints
+
+$small-screen: em(400);
+$medium-screen: em(700);
+$large-screen: em(1000);
+
+// Styles
+
+html {
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: $acumin;
+  font-weight: 400;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $base-font-color;
+  font-feature-settings: "kern", "liga", "pnum";
+  -webkit-font-smoothing: antialiased;
+}
+
+/// Text Styles
+
+.title-1 {
+  font-size: 34px;
+  font-weight: 200;
+  color: $blue;
+  @include breakpoint(medium-screen-up) {
+    font-size: 42px;
+    max-width: 600px;
+  }
+  @include breakpoint(large-screen-up) {
+    font-size: 64px;
+    max-width: 800px;
+  }
+}
+
+.title-2 {
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 200;
+  color: $blue;
+  @include breakpoint(medium-screen-up) {
+    font-size: 34px;
+  }
+  @include breakpoint(large-screen-up) {
+    font-size: 50px;
+  }
+}
+
+.large {
+  font-size: 17px;
+  line-height: 25px;
+  max-width: 500px;
+  font-family: $calluna;
+  font-weight: 400;
+  @include breakpoint(large-screen-up) {
+    font-size: 22px;
+    line-height: 30px;
+    max-width: 700px;
+  }
+  &.quote {
+    font-weight: 800;
+    @include breakpoint(medium-screen-up) {
+      font-size: 22px;
+      line-height: 30px;
+    }
+    @include breakpoint(large-screen-up) {
+      font-size: 30px;
+      line-height: 38px;
+    }
+  }
+}
+
+.regular {
+  font-size: 17px;
+  line-height: 25px;
+  max-width: 600px;
+  font-family: $calluna;
+  font-weight: 400;
+}
+
+.button {
+  height: 60px;
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+  background-color: $blue;
+  color: $white;
+  font-weight: 400;
+  width: 100%;
+  max-width: 200px;
+  box-sizing: border-box;
+  @include transition(all 0.3s ease-in-out);
+  &:hover {
+    background-color: $rose;
+    color: $white;
+  }
+  @include breakpoint(medium-screen-up) {
+    font-size: 20px;
+  }
+  &.outline {
+    border: 1px solid $blue;
+    background-color: $white;
+    color: $blue;
+    &:hover {
+      background-color: $rose;
+      color: $white;
+      border: 1px solid $rose;
+    }
+  }
+  &.icon {
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    &.selected {
+      background-color: $rose;
+    }
+  }
+  &.disabled {
+    opacity: 0.4;
+  }
+}
+
+input {
+  height: 60px;
+  font-size: 16px;
+  padding: 16px;
+  box-sizing: border-box;
+  border: 1px solid $blue;
+  font-family: $acumin;
+  color: $blue;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+  &:focus {
+    border: 1px solid $rose;
+    outline: none;
+  }
+  @include breakpoint(medium-screen-up) {
+    font-size: 20px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $blue;
+  @include transition(all 0.3s ease-in-out);
+  &:hover {
+    color: $rose;
+  }
+}
+
+p.img {
+  max-width: 650px;
+  img {
+    width: 100%;
+  }
+}
+
+/// Spacing
+
+.pad {
+  padding: 24px;
+  @include breakpoint(medium-screen-up) {
+    padding: 48px;
+  }
+  @include breakpoint(large-screen-up) {
+    padding: 100px;
+  }
+}
+
+.pad-2 {
+  padding: 48px 24px;
+  @include breakpoint(medium-screen-up) {
+    padding: 48px;
+  }
+  @include breakpoint(large-screen-up) {
+    padding: 100px;
+  }
+}
+
+.in-pad {
+  padding: 24px;
+}
+
+.mar-top-8 {
+  margin-top: 8px;
+}
+
+.mar-top-16 {
+  margin-top: 16px;
+}
+
+.mar-top-24 {
+  margin-top: 24px;
+  &.scale {
+    @include breakpoint(large-screen-up) {
+      margin-top: 48px;
+    }
+  }
+}
+
+.mar-top-48 {
+  margin-top: 48px;
+}
+
+.mar-bot-8 {
+  margin-bottom: 8px;
+}
+
+.mar-bot-16 {
+  margin-bottom: 16px;
+}
+
+.mar-bot-24 {
+  margin-bottom: 24px;
+}
+
+.mar-bot-48 {
+  margin-bottom: 48px;
+}
+
+/// Layout
+
+.flex-center {
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+/// Design
+
+header {
+  padding: 24px;
+  box-sizing: border-box;
+  height: 74px;
+  position: relative;
+  // border-bottom: 1px solid $light-gray;
+  @include breakpoint(medium-screen-up) {
+    @include display(flex);
+    @include justify-content(space-between);
+    @include align-items(center);
+  }
+  .logo {
+    width: 100px;
+    padding-top: 4px;
+    @include breakpoint(large-screen-up) {
+      width: 120px;
+      margin-left: 12px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  nav {
+    ul {
+      display: none;
+      @include breakpoint(medium-screen-up) {
+        display: initial;
+        @include display(flex);
+        @include align-items(center);
+      }
+      li {
+        padding: 16px;
+        font-weight: 400;
+        font-size: 20px;
+      }
+    }
+  }
+  &.closet {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+    background-color: rgba($white, .9);
+    .order {
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      min-width: 120px;
+      @include breakpoint(medium-screen-up) {
+        min-width: 150px;
+      }
+    }
+  }
+  &.password {
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+  }
+}
+
+.order-menu {
+  background: $blue;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  @include breakpoint(large-screen-up) {
+    width: 400px;
+    right: 0;
+  }
+  .header {
+    height: 74px;
+    position: fixed;
+    z-index: 300;
+    width: 100%;
+    background: rgba($blue, .95);
+    padding: 24px;
+    box-sizing: border-box;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(space-between);
+    color: $white;
+    @include breakpoint(large-screen-up) {
+      width: 400px;
+    }
+    .title-2 {
+      @include breakpoint(medium-screen-up) {
+        font-size: 28px;
+        margin-bottom: 2px;
+      }
+    }
+    .button.icon {
+      position: relative;
+      width: 26px;
+      height: 26px;
+      &:hover {
+        background-color: $blue;
+      }
+    }
+  }
+  .send-order {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    .button {
+      max-width: none;
+      background-color: $rose;
+    }
+  }
+  .menu {
+    padding: 0 24px 24px 24px;
+    margin-top: 74px;
+    color: $white;
+    .items {
+      border-top: 1px solid $white;
+      padding-top: 24px;
+      .item {
+        height: 74px;
+        margin-bottom: 24px;
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(space-between);
+        .details {
+          @include display(flex);
+          @include align-items(center);
+          .item-img {
+            height: 74px;
+            img {
+              height: 100%;
+            }
+          }
+          .item-info {
+            padding-left: 24px;
+            .item-name {
+              font-family: $calluna;
+              font-weight: 800;
+            }
+          }
+        }
+        .remove {
+          a {
+            color: $rose;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+.home-intro {
+  background-color: $light-gray;
+  @include breakpoint(large-screen-up) {
+    box-sizing: border-box;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    height: 600px;
+  }
+  .container {
+    @include display(flex);
+    @include flex-direction(column);
+    text-align: center;
+    max-width: 800px;
+    .title-1, .large {
+      color: $blue;
+      max-width: none;
+    }
+  }
+}
+
+.intro {
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+  background-color: $light-gray;
+  @include breakpoint(large-screen-up) {
+    padding: 64px 100px;
+  }
+  .large {
+    color: $blue;
+  }
+  .container {
+    text-align: center;
+    max-width: 700px;
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(center);
+    .title-1, p.large {
+      max-width: none;
+      text-align: center;
+    }
+  }
+  &.fixed-header {
+    margin-top: 74px;
+  }
+  &.tall {
+    @include breakpoint(large-screen-up) {
+      box-sizing: border-box;
+      @include display(flex);
+      @include align-items(center);
+      @include justify-content(center);
+      height: 350px;
+    }
+  }
+}
+
+.video {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  @include breakpoint(medium-screen-up) {
+    height: 460px;
+  }
+  @include breakpoint(large-screen-up) {
+    height: 500px;
+    margin: -76px 100px 0 100px;
+  }
+  .play-button {
+    background-color: $blue;
+    height: 60px;
+    width: 60px;
+    transition: all 0.3s ease-in-out;
+    @include breakpoint(medium-screen-up) {
+      height: 80px;
+      width: 80px;
+      img {
+        width: 50px;
+      }
+    }
+    &:hover {
+      background-color: $rose;
+    }
+  }
+  &.hero {
+    background-image: $overlay, url('/imgs/hero.jpg');
+  }
+}
+
+.text {
+  .container {
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(center);
+  }
+}
+
+.big-img {
+  background-position: center;
+  background-size: cover;
+  height: 200px;
+  padding: 24px;
+  box-sizing: border-box;
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+  text-align: center;
+  color: $white;
+  @include breakpoint(medium-screen-up) {
+    height: 460px;
+  }
+  @include breakpoint(large-screen-up) {
+    height: 500px;
+    // margin: -76px 100px 0 100px;
+  }
+  // &.about-1 {
+  //   background-image: url('/imgs/about-1.jpg');
+  // }
+  // &.about-3 {
+  //   background-image: $overlay-dark, url('/imgs/about-3.jpg');
+  // }
+}
+
+.how-it-works {
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+  @include breakpoint(large-screen-up) {
+    display: inherit;
+  }
+  .title-1 {
+    text-align: center;
+    @include breakpoint(large-screen-up) {
+      text-align: left;
+    }
+  }
+  .steps {
+    @include breakpoint(large-screen-up) {
+      @include display(flex);
+    }
+    .step {
+      @include display(flex);
+      @include flex-direction(column);
+      @include align-items(center);
+      text-align: center;
+      @include breakpoint(medium-screen-up) {
+        @include flex-direction(row);
+      }
+      @include breakpoint(large-screen-up) {
+        @include flex-direction(column);
+        @include align-items(flex-start);
+        margin-top: 0;
+        padding: 24px;
+        border-left: 1px solid $light-gray;
+        box-sizing: border-box;
+      }
+      img {
+        width: 150px;
+        border-radius: 50%;
+        @include breakpoint(large-screen-up) {
+          width: 200px;
+          margin-bottom: 24px;
+        }
+      }
+      .regular {
+        max-width: 350px;
+        @include breakpoint(medium-screen-up) {
+          text-align: left;
+          margin-left: 48px;
+        }
+        @include breakpoint(large-screen-up) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+.sponsor-us {
+  background-color: $light-gray;
+  text-align: center;
+  @include flex-direction(column);
+  .sponsors {
+    width: 100%;
+    @include flex-direction(column);
+    @include breakpoint(medium-screen-up) {
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include justify-content(flex-start);
+    }
+    @include breakpoint(large-screen-up) {
+      padding: 24px;
+      @include justify-content(space-between);
+    }
+    .sponsor {
+      width: 200px;
+      @include breakpoint(medium-screen-up) {
+        width: 25%;
+        max-width: 250px;
+      }
+    }
+  }
+}
+
+.wardrobe {
+  background-color: $light-gray;
+  padding-top: 0;
+  .items {
+    @include breakpoint(medium-screen-up) {
+      @include display(flex);
+      @include flex-wrap(wrap);
+    }
+    .item {
+      margin-bottom: 24px;
+      @include breakpoint(medium-screen-up) {
+        width: 50%;
+        padding: 12px;
+        margin-bottom: 0px;
+        box-sizing: border-box;
+      }
+      @include breakpoint(large-screen-up) {
+        width: 33.3333%;
+        padding: 24px;
+        &:first-child, &:nth-child(2), &:nth-child(3) {
+          padding-top: 0;
+        }
+      }
+      .container {
+        width: 100%;
+        &.selected {
+          outline: 1px solid $rose;
+        }
+      }
+      .item-img {
+        border-bottom: 1px solid $light-gray;
+        line-height: 0;
+        img {
+          width: 100%;
+        }
+      }
+      .item-info {
+        padding: 24px;
+        // text-align: center;
+        background-color: $white;
+        position: relative;
+        .item-name {
+          font-family: $calluna;
+          font-weight: 800;
+          font-size: 24px;
+          color: $blue;
+        }
+        .item-number {
+          color: $rose;
+          @include breakpoint(medium-screen-up) {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+  .order {
+    text-align: center;
+    padding: 24px;
+    .container {
+      @include display(flex);
+      @include flex-direction(column);
+      @include align-items(center);
+    }
+  }
+}
+
+.form {
+  background: $light-gray;
+  padding: 24px;
+  box-sizing: border-box;
+  position: relative;
+  @include breakpoint(large-screen-up) {
+    height: calc(100vh - 74px);
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    background-image: $overlay, url('/imgs/hero-2.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .error {
+    width: 100%;
+    padding: 24px;
+    background: $rose;
+    color: $white;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(space-between);
+    @include breakpoint(large-screen-up) {
+      position: absolute;
+      top: 0;
+      text-align: center;
+      @include justify-content(center);
+      height: 86px;
+      .close {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+      }
+    }
+  }
+  .container {
+    background: $white;
+    // height: 500px;
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    @include breakpoint(large-screen-up) {
+      width: 500px;
+      padding: 48px;
+    }
+    input {
+      width: 100%;
+    }
+    .title-2 {
+      color: $blue;
+    }
+    .username, .password {
+      width: 100%;
+    }
+    .button {
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  color: $blue;
+  padding: 48px 24px;
+  @include breakpoint(medium-screen-up) {
+    padding: 48px;
+  }
+  @include breakpoint(large-screen-up) {
+    font-size: 20px;
+    padding: 100px 0;
+  }
+  &.bord {
+    border-top: 1px solid $light-gray;
+  }
+  .container {
+    @include breakpoint(large-screen-up) {
+      @include display(flex);
+      @include align-items(flex-start);
+    }
+  }
+  .say-hello {
+    border-bottom: 1px solid $light-gray;
+    box-sizing: border-box;
+    @include display(flex);
+    @include flex-direction(column);
+    @include justify-content(center);
+    padding-bottom: 48px;
+    @include breakpoint(medium-screen-up) {
+      padding: 48px;
+    }
+    @include breakpoint(large-screen-up) {
+      width: 50%;
+      border-bottom: none;
+      border-right: 1px solid $light-gray;
+      padding: 60px;
+    }
+    .title-2 {
+      @include breakpoint(large-screen-up) {
+        margin-bottom: 48px;
+      }
+    }
+    .rule {
+      @include breakpoint(medium-screen-up) {
+        margin: 44px 0;
+      }
+    }
+    .email {
+      font-family: $calluna;
+      font-weight: 800;
+      font-size: 24px;
+      @include breakpoint(medium-screen-up) {
+        font-size: 40px;
+      }
+    }
+  }
+  .get-updates {
+    padding-top: 48px;
+    box-sizing: border-box;
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(center);
+    @include breakpoint(medium-screen-up) {
+      padding: 48px;
+    }
+    @include breakpoint(large-screen-up) {
+      width: 50%;
+      padding: 60px;
+    }
+    .title-2 {
+      @include breakpoint(large-screen-up) {
+        margin-bottom: 48px;
+      }
+    }
+    form {
+      width: 100%;
+      @include display(flex);
+    }
+    .email-form {
+      @include display(flex);
+      width: 100%;
+      max-width: 500px;
+      @include breakpoint(large-screen-up) {
+        max-width: 460px;
+      }
+      input {
+        @include flex(2);
+        min-width: 150px;
+        margin-right: 0;
+      }
+      .button {
+        width: 100px;
+      }
+    }
+    .nav, .social {
+      @include display(flex);
+      @include justify-content(center);
+      @include align-items(center);
+      @include flex-wrap(wrap);
+      li {
+        padding: 8px;
+        @include breakpoint(large-screen-up) {
+          padding: 16px;
+        }
+      }
+    }
+    .social {
+      a {
+        height: 100%;
+        display: inline-block;
+      }
+      li {
+        padding: 0;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+

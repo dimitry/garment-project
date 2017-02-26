@@ -1,0 +1,71 @@
+<div class="big-img" style="background-image: url({{ page.hero.image.url }})">
+</div>
+
+<div class="text flex-center pad">
+  <div class="container">
+    <div class="inner-container">
+      <h2 class="title-1">{{ page.hero.title }}</h2>
+      <p class="regular mar-top-24 scale">{{ page.hero.text1 }}</p>
+      <p class="regular mar-top-24">{{ page.hero.text2 }}</p>
+    </div>
+    <p class="img mar-top-24 scale"><img src="{{ page.hero.supporting_image.url }}"></p>
+  </div>
+</div>
+
+<div class="big-img" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{ page.quote1.background.url }})">
+  <div class="container">
+    <p class="large quote">{{ page.quote1.quote }}</p>
+    <p class="mar-top-24"><img src="/imgs/red-rule.svg" />
+  </div>
+</div>
+
+<div class="text flex-center pad">
+  <div class="container">
+    <div class="inner-container">
+      <h2 class="title-1 mar-top-24 scale">{{ page.block1.title }}</h2>
+      <p class="regular mar-top-24 scale">{{ page.block1.paragraph1 }}</p>
+      {{#if page.block1.paragraph2 }}
+      <p class="regular mar-top-24">{{ page.block1.paragraph2 }}</p>
+      {{/if}}
+    </div>
+  </div>
+</div>
+
+<div class="big-img" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{ page.quote2.background.url }})">
+  <div class="container">
+    <p class="large quote">{{ page.quote2.quote }}</p>
+    <p class="mar-top-24"><img src="/imgs/red-rule.svg" />
+  </div>
+</div>
+
+<div class="text flex-center pad">
+  <div class="container">
+    <div class="inner-container">
+      <h2 class="title-1 mar-top-24 scale">{{ page.block2.title }}</h2>
+      <p class="regular mar-top-24 scale">{{ page.block2.paragraph1 }}</p>
+      {{#if page.block2.paragraph2 }}
+      <p class="regular mar-top-24">{{ page.block2.paragraph2 }}</p>
+      {{/if}}
+    </div>
+  </div>
+</div>
+
+<div class="big-img" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{ page.quote3.background.url }})">
+  <div class="container">
+    <p class="large quote">{{ page.quote3.quote }}</p>
+    <p class="mar-top-24"><img src="/imgs/red-rule.svg" />
+  </div>
+</div>
+
+<div class="text flex-center pad">
+  <div class="container">
+  <p class="img mar-top-24 scale"><img src="{{ page.block3.image.url }}" /></p>
+    <div class="inner-container">
+      <h2 class="title-1 mar-top-24 scale">{{ page.block3.title }}</h2>
+      <p class="regular mar-top-24 scale">{{ page.block3.paragraph1 }}</p>
+      {{#if page.block3.paragraph2 }}
+      <p class="regular mar-top-24">{{ page.block3.paragraph2 }}</p>
+      {{/if}}
+    </div>
+  </div>
+</div>
