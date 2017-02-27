@@ -866,9 +866,9 @@ footer {
     .email {
       font-family: $calluna;
       font-weight: 800;
-      font-size: 24px;
+      font-size: 18px;
       @include breakpoint(medium-screen-up) {
-        font-size: 40px;
+        font-size: 32px;
       }
     }
   }

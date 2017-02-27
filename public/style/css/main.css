@@ -1371,10 +1371,10 @@ footer {
     footer .say-hello .email {
       font-family: "calluna", "Georgia", "Times New Roman", serif;
       font-weight: 800;
-      font-size: 24px; }
+      font-size: 18px; }
       @media (min-width: 43.75em) {
         footer .say-hello .email {
-          font-size: 40px; } }
+          font-size: 32px; } }
   footer .get-updates {
     padding-top: 48px;
     box-sizing: border-box;
