@@ -664,6 +664,7 @@ header {
   background-color: $light-gray;
   text-align: center;
   @include flex-direction(column);
+  color: $blue;
   .sponsors {
     width: 100%;
     @include flex-direction(column);

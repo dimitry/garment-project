@@ -1007,7 +1007,8 @@ header {
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   flex-direction: column;
-  -ms-flex-direction: column; }
+  -ms-flex-direction: column;
+  color: #4C586F; }
   .sponsor-us .sponsors {
     width: 100%;
     -webkit-box-orient: vertical;
