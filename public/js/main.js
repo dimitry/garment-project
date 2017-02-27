@@ -3,10 +3,18 @@ var Main = (function() {
     player: null,
 
     init: function() {
-      $('.action-player').click(function (e) {
+      // Youtube
+      $('.action-player').click(function(e) {
         e.preventDefault();
         Main.player.playVideo();
         $('.player').fadeIn(333);
+      });
+      // Nav
+      $('.mobile-menu').click(function(e) {
+        $('.mobile-nav').fadeIn(333);
+      });
+      $('.mobile-nav .close').click(function(e) {
+        $('.mobile-nav').fadeOut(333);
       });
     },
 
