@@ -80,7 +80,7 @@ body {
     line-height: 30px;
     max-width: 700px;
   }
-  &.quote {
+  &.quote, &.serif {
     font-weight: 800;
     @include breakpoint(medium-screen-up) {
       font-size: 22px;
@@ -91,6 +91,9 @@ body {
       line-height: 38px;
     }
   }
+  &.serif {
+    color: $blue;
+  }
 }
 
 .regular {
@@ -99,7 +102,25 @@ body {
   max-width: 600px;
   font-family: $calluna;
   font-weight: 400;
+  a {
+    color: $rose;
+  }
 }
+
+ul.bullet {
+  list-style: disc;
+  font-size: 17px;
+  line-height: 25px;
+  max-width: 600px;
+  font-family: $calluna;
+  font-weight: 400;
+  li {
+    a {
+      color: $rose;
+    }
+  }
+}
+
 
 .button {
   height: 60px;
@@ -259,7 +280,7 @@ header {
   box-sizing: border-box;
   height: 74px;
   position: relative;
-  // border-bottom: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
   @include breakpoint(medium-screen-up) {
     @include display(flex);
     @include justify-content(space-between);
