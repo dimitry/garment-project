@@ -44,15 +44,7 @@ StaticPage.add({
       },
       title: {type: Types.Text},
       text1: {type: Types.Textarea},
-      text2: {type: Types.Textarea},
-      supporting_image: {
-        type: Types.S3File,
-        s3path: '/static/about',
-        filename: function(item, filename) {
-          var extension = filename.split('.').pop().toLowerCase();
-          return item._id + '_hero_supporting_image.' + extension;
-        }
-      },
+      text2: {type: Types.Textarea}
     },
     quote1: {
       background: {
