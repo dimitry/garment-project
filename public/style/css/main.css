@@ -1448,7 +1448,9 @@ footer {
         margin-right: 0; }
       footer .get-updates .email-form input.button {
         width: 100px;
-        line-height: 20px; }
+        line-height: 20px;
+        text-align: center;
+        display: inline-block; }
         footer .get-updates .email-form input.button:hover {
           border: 1px solid #F08585; }
     footer .get-updates .nav, footer .get-updates .social {
