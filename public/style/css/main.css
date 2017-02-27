@@ -94,16 +94,18 @@ body {
       font-size: 22px;
       line-height: 30px;
       max-width: 700px; } }
-  .large.quote {
+  .large.quote, .large.serif {
     font-weight: 800; }
     @media (min-width: 43.75em) {
-      .large.quote {
+      .large.quote, .large.serif {
         font-size: 22px;
         line-height: 30px; } }
     @media (min-width: 62.5em) {
-      .large.quote {
+      .large.quote, .large.serif {
         font-size: 30px;
         line-height: 38px; } }
+  .large.serif {
+    color: #4C586F; }
 
 .regular {
   font-size: 17px;
@@ -111,6 +113,18 @@ body {
   max-width: 600px;
   font-family: "calluna", "Georgia", "Times New Roman", serif;
   font-weight: 400; }
+  .regular a {
+    color: #F08585; }
+
+ul.bullet {
+  list-style: disc;
+  font-size: 17px;
+  line-height: 25px;
+  max-width: 600px;
+  font-family: "calluna", "Georgia", "Times New Roman", serif;
+  font-weight: 400; }
+  ul.bullet li a {
+    color: #F08585; }
 
 .button {
   height: 60px;
@@ -284,7 +298,8 @@ header {
   padding: 24px;
   box-sizing: border-box;
   height: 74px;
-  position: relative; }
+  position: relative;
+  border-bottom: 1px solid #EBECED; }
   @media (min-width: 43.75em) {
     header {
       display: -webkit-box;
