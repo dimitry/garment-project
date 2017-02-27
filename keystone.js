@@ -36,9 +36,9 @@ keystone.init({
 
 // S3
 keystone.set('s3 config', {
-  bucket: 'garment-project-dev',
-  key: 'AKIAIRON2BIGCLTQ4KVA',
-  secret: '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'
+  bucket: process.env.AWS_S3_BUCKET,
+  key: process.env.AWS_ACCESS_KEY,
+  secret: process.env.AWS_SECRET_ACCESS_KEY
 });
 
 // Load your project's Models
