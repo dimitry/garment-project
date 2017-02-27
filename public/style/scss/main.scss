@@ -664,6 +664,7 @@ header {
   background-color: $light-gray;
   text-align: center;
   @include flex-direction(column);
+  color: $blue;
   .sponsors {
     width: 100%;
     @include flex-direction(column);
@@ -866,9 +867,9 @@ footer {
     .email {
       font-family: $calluna;
       font-weight: 800;
-      font-size: 24px;
+      font-size: 18px;
       @include breakpoint(medium-screen-up) {
-        font-size: 40px;
+        font-size: 32px;
       }
     }
   }
@@ -909,6 +910,8 @@ footer {
       input.button {
         width: 100px;
         line-height: 20px;
+        text-align: center;
+        display: inline-block;
         &:hover {
           border: 1px solid $rose;
         }

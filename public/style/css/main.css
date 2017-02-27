@@ -1007,7 +1007,8 @@ header {
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   flex-direction: column;
-  -ms-flex-direction: column; }
+  -ms-flex-direction: column;
+  color: #4C586F; }
   .sponsor-us .sponsors {
     width: 100%;
     -webkit-box-orient: vertical;
@@ -1371,10 +1372,10 @@ footer {
     footer .say-hello .email {
       font-family: "calluna", "Georgia", "Times New Roman", serif;
       font-weight: 800;
-      font-size: 24px; }
+      font-size: 18px; }
       @media (min-width: 43.75em) {
         footer .say-hello .email {
-          font-size: 40px; } }
+          font-size: 32px; } }
   footer .get-updates {
     padding-top: 48px;
     box-sizing: border-box;
@@ -1448,7 +1449,9 @@ footer {
         margin-right: 0; }
       footer .get-updates .email-form input.button {
         width: 100px;
-        line-height: 20px; }
+        line-height: 20px;
+        text-align: center;
+        display: inline-block; }
         footer .get-updates .email-form input.button:hover {
           border: 1px solid #F08585; }
     footer .get-updates .nav, footer .get-updates .social {
