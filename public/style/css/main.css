@@ -93,7 +93,7 @@ body {
     .large {
       font-size: 22px;
       line-height: 30px;
-      max-width: 700px; } }
+      max-width: 800px; } }
   .large.quote, .large.serif {
     font-weight: 800; }
     @media (min-width: 43.75em) {
@@ -359,6 +359,9 @@ header {
       padding: 16px;
       font-weight: 400;
       font-size: 20px; }
+  @media (min-width: 43.75em) {
+    header .mobile-menu {
+      display: none; } }
   header .mobile-nav {
     background: #4C586F;
     color: #ffffff;
@@ -368,6 +371,9 @@ header {
     height: 100vh;
     width: 100vw;
     z-index: 200; }
+    @media (min-width: 43.75em) {
+      header .mobile-nav {
+        display: none; } }
     header .mobile-nav .close {
       padding: 24px;
       box-sizing: border-box;
