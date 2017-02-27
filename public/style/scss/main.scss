@@ -281,11 +281,9 @@ header {
   height: 74px;
   position: relative;
   border-bottom: 1px solid $light-gray;
-  @include breakpoint(medium-screen-up) {
-    @include display(flex);
-    @include justify-content(space-between);
-    @include align-items(center);
-  }
+  @include display(flex);
+  @include justify-content(space-between);
+  @include align-items(center);
   .logo {
     width: 100px;
     padding-top: 4px;
@@ -309,6 +307,40 @@ header {
         padding: 16px;
         font-weight: 400;
         font-size: 20px;
+      }
+    }
+  }
+  .mobile-nav {
+    background: $blue;
+    color: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 200;
+    .close {
+      padding: 24px;
+      box-sizing: border-box;
+      height: 74px;
+      @include display(flex);
+      @include align-items(center);
+      @include justify-content(flex-end);
+    }
+    ul {
+      height: 100vh;
+      padding: 24px;
+      box-sizing: border-box;
+      @include display(flex);
+      @include flex-direction(column);
+      @include align-items(center);
+      li {
+        a {
+          color: $white;
+          font-size: 24px;
+          text-align: center;
+          font-weight: 200;
+        }
       }
     }
   }
