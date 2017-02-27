@@ -19,6 +19,7 @@ StaticPage.add({
     sponsors: {type: Types.Relationship, ref: 'Sponsor', many: true},
     title: {type: Types.Text, note: 'Page title.'},
     hero: {type: Types.Textarea, note: 'Page description under the title.'},
+    youtube_link: {type: Types.Url},
     video_image: {
       type: Types.S3File,
       s3path: '/static/about',
