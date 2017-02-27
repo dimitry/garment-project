@@ -26,7 +26,6 @@ exports = module.exports = function (req, res) {
           return next(err);
         } else {
           locals.page = page.home;
-          console.log(locals.page);
           next(err);
         }
       });
