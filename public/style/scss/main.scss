@@ -466,6 +466,7 @@ header {
   height: 200px;
   background-size: cover;
   background-position: center;
+  position: relative;
   @include breakpoint(medium-screen-up) {
     height: 460px;
   }
@@ -491,6 +492,20 @@ header {
   }
   &.hero {
     background-image: $overlay, url('/imgs/hero.jpg');
+  }
+  .player {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
@@ -856,7 +871,6 @@ footer {
     }
   }
 }
-
 
 
 

@@ -56,10 +56,14 @@
       <p class="mar-top-24"><img src="/imgs/heart.svg" /></p>
     </footer>
 
+    <script media="all" src="https://www.youtube.com/iframe_api"></script>
     <script media="all" src="/js/jquery-3.1.1.min.js"></script>
     <script media="all" src="/js/main.js"></script>
     <script>
-      Main.init();
+      var onYouTubeIframeAPIReady = Main.onYouTubeIframeAPIReady;
+      $(document).ready(function() {
+        Main.init();
+      });
     </script>
   </body>
 </html>
