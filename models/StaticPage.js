@@ -19,6 +19,14 @@ StaticPage.add({
     sponsors: {type: Types.Relationship, ref: 'Sponsor', many: true},
     title: {type: Types.Text, note: 'Page title.'},
     hero: {type: Types.Textarea, note: 'Page description under the title.'},
+    video_image: {
+      type: Types.S3File,
+      s3path: '/static/about',
+      filename: function(item, filename) {
+        var extension = filename.split('.').pop().toLowerCase();
+        return item._id + '_home_video_image.' + extension;
+      }
+    },
     donate: {
       title: {type: Types.Text},
       paragraph: {type: Types.Textarea}
