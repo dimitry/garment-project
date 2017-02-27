@@ -13,7 +13,6 @@ exports = module.exports = function (req, res) {
           return next(err);
         } else {
           locals.page = page.about;
-          console.log(locals.page);
           next(err);
         }
       });
