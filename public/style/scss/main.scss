@@ -785,7 +785,7 @@ footer {
   }
   @include breakpoint(large-screen-up) {
     font-size: 20px;
-    padding: 100px 0;
+    padding: 100px 0 24px 0;
   }
   &.bord {
     border-top: 1px solid $light-gray;
@@ -860,13 +860,17 @@ footer {
       @include breakpoint(large-screen-up) {
         max-width: 460px;
       }
-      input {
+      input.email {
         @include flex(2);
         min-width: 150px;
         margin-right: 0;
       }
-      .button {
+      input.button {
         width: 100px;
+        line-height: 20px;
+        &:hover {
+          border: 1px solid $rose;
+        }
       }
     }
     .nav, .social {
@@ -889,6 +893,18 @@ footer {
       li {
         padding: 0;
       }
+    }
+  }
+  .disclaimer {
+    padding-bottom: 0;
+    font-size: 14px;
+    line-height: 18px;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    p {
+      max-width: 1200px;
+      opacity: 0.8;
     }
   }
 }

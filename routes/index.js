@@ -7,7 +7,7 @@
  * For simplicity, the default setup for route controllers is for each to be
  * in its own file, and we import all the files in the /routes/views directory.
  *
- * Each of these files is a route controller, and is responsible for all the
+ * Each of these files is a route controller, and is responsible for all
  * processing that needs to happen for the route (e.g. loading data, handling
  * form submissions, rendering the view template, etc).
  *
@@ -37,7 +37,7 @@ exports = module.exports = function (app) {
   app.get('/',        routes.views.index);
   app.get('/about',   routes.views.about);
   app.all('/faq',     routes.views.faq);
-  app.all('/tou',     routes.views.tou);
+  app.all('/terms',   routes.views.terms);
   app.all('/privacy', routes.views.privacy);
 
   // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

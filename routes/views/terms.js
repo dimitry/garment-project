@@ -4,6 +4,6 @@ exports = module.exports = function (req, res) {
   var view = new keystone.View(req, res);
   var locals = res.locals;
 
-  locals.section = 'tou';
-  view.render('tou');
+  locals.section = 'terms';
+  view.render('terms');
 };
