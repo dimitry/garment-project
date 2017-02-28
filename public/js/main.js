@@ -16,6 +16,9 @@ var Main = (function() {
       $('.mobile-nav .close').click(function(e) {
         $('.mobile-nav').fadeOut(333);
       });
+      $('.mobile-nav').on('touchmove', function(e) {
+        e.preventDefault();
+      });
     },
 
     onYouTubeIframeAPIReady: function() {
