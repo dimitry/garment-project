@@ -365,7 +365,7 @@ header {
   header .mobile-nav {
     background: #4C586F;
     color: #ffffff;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
