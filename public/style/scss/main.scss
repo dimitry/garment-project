@@ -939,16 +939,31 @@ footer {
       }
     }
   }
-  .disclaimer {
-    padding-bottom: 0;
-    font-size: 14px;
-    line-height: 18px;
+  .disclaimer-container {
     @include display(flex);
+    @include flex-direction(column);
     @include align-items(center);
-    @include justify-content(center);
-    p {
-      max-width: 1200px;
-      opacity: 0.8;
+    padding: 24px;
+    @include breakpoint(medium-screen-up) {
+      padding-top: 64px;
+    }
+    .new-sun {
+      width: 100px;
+      img {
+        width: 100%;
+      }
+    }
+    .disclaimer {
+      padding-bottom: 0;
+      font-size: 14px;
+      line-height: 18px;
+      @include display(flex);
+      @include align-items(center);
+      @include justify-content(center);
+      p {
+        max-width: 1200px;
+        opacity: 0.8;
+      }
     }
   }
 }

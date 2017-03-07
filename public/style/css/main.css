@@ -1497,10 +1497,7 @@ footer {
       display: inline-block; }
     footer .get-updates .social li {
       padding: 0; }
-  footer .disclaimer {
-    padding-bottom: 0;
-    font-size: 14px;
-    line-height: 18px;
+  footer .disclaimer-container {
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -1508,6 +1505,16 @@ footer {
     display: -moz-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-direction: column;
     -webkit-box-align: center;
     -moz-box-align: center;
     box-align: center;
@@ -1517,17 +1524,45 @@ footer {
     -o-align-items: center;
     align-items: center;
     -ms-flex-align: center;
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    box-pack: center;
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    -ms-justify-content: center;
-    -o-justify-content: center;
-    justify-content: center;
-    -ms-flex-pack: center; }
-    footer .disclaimer p {
-      max-width: 1200px;
-      opacity: 0.8; }
+    padding: 24px; }
+    @media (min-width: 43.75em) {
+      footer .disclaimer-container {
+        padding-top: 64px; } }
+    footer .disclaimer-container .new-sun {
+      width: 100px; }
+      footer .disclaimer-container .new-sun img {
+        width: 100%; }
+    footer .disclaimer-container .disclaimer {
+      padding-bottom: 0;
+      font-size: 14px;
+      line-height: 18px;
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      box-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      align-items: center;
+      -ms-flex-align: center;
+      -webkit-box-pack: center;
+      -moz-box-pack: center;
+      box-pack: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      -o-justify-content: center;
+      justify-content: center;
+      -ms-flex-pack: center; }
+      footer .disclaimer-container .disclaimer p {
+        max-width: 1200px;
+        opacity: 0.8; }
 
 /*# sourceMappingURL=main.css.map */
