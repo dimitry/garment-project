@@ -32,6 +32,7 @@ keystone.init({
   'session': true,
   'auth': true,
   'user model': 'User',
+  'cookie secret': '0e7800169147d45e67d58e3ce46e1b15'
 });
 
 // S3

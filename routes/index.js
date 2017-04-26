@@ -33,12 +33,18 @@ var routes = {
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
-  // Views
+  // Main
   app.get('/',        routes.views.index);
   app.get('/about',   routes.views.about);
   app.all('/faq',     routes.views.faq);
   app.all('/terms',   routes.views.terms);
   app.all('/privacy', routes.views.privacy);
+
+  // Closet
+  app.get('/closets/:closetId', middleware.requireCloset, middleware.requireClosetUser, routes.views.closet.index);
+  app.get('/closets/:closetId/login', middleware.requireCloset, routes.views.closet.login);
+  app.post('/closets/:closetId/login', middleware.requireCloset, routes.views.closet.loginProcess);
+  app.get('/closets/:closetId/logout', middleware.requireCloset, routes.views.closet.logout);
 
   // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
   // app.get('/protected', middleware.requireUser, routes.views.protected);
