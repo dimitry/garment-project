@@ -136,6 +136,8 @@ ul.bullet {
   width: 100%;
   max-width: 200px;
   box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
   @include transition(all 0.3s ease-in-out);
   &:hover {
     background-color: $rose;
@@ -386,9 +388,13 @@ header {
   top: 0;
   height: 100vh;
   width: 100vw;
+  display: none;
   @include breakpoint(large-screen-up) {
     width: 400px;
     right: 0;
+  }
+  &.active {
+    display: block;
   }
   .header {
     height: 74px;
@@ -791,6 +797,7 @@ header {
         position: absolute;
         right: 24px;
         top: 24px;
+        cursor: pointer;
       }
     }
   }
@@ -817,6 +824,7 @@ header {
     .button {
       width: 100%;
       max-width: none;
+      line-height: 0;
     }
   }
 }
@@ -1002,6 +1010,9 @@ footer {
   }
 }
 
+.sample-item {
+  display: none;
+}
 
 
 

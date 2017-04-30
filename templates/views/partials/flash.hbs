@@ -1,24 +1,20 @@
 {{#if messages}}
-<div id="flash-messages" class="container">
+<div class="error">
   {{#if messages.info}}
-  <div class="alert alert-info">
-    {{{flashMessages messages.info}}}
-  </div>
+    <p>{{{flashMessages messages.info}}}</p>
+    <p class="close"><img src="/imgs/close.svg" /></p>
   {{/if}}
   {{#if messages.success}}
-  <div class="alert alert-success">
-    {{{flashMessages messages.success}}}
-  </div>
+    <p>{{{flashMessages messages.success}}}</p>
+    <p class="close"><img src="/imgs/close.svg" /></p>
   {{/if}}
   {{#if messages.warning}}
-  <div class="alert alert-warning">
-    {{{flashMessages messages.warning}}}
-  </div>
+    <p>{{{flashMessages messages.warning}}}</p>
+    <p class="close"><img src="/imgs/close.svg" /></p>
   {{/if}}
   {{#if messages.error}}
-  <div class="alert alert-danger">
-    {{{flashMessages messages.error}}}
-  </div>
+    <p>{{{flashMessages messages.error}}}</p>
+    <p class="close"><img src="/imgs/close.svg" /></p>
   {{/if}}
 </div>
 {{/if}}

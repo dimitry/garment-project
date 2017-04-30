@@ -1,6 +1,19 @@
-{{> flash }}
+{{#content "header"}}
+  <header class="password">
+    <div class="logo"><a href="/"><img src="/imgs/logo.svg"></a></div>
+  </header>
+{{/content}}
 
 <form action="/closets/{{ closet.id }}/login" method="POST">
-  <p><label for="password"><input type="text" id="password" name="password" placeholder="Password"></p>
-  <p><input type="submit" value="Login"></p>
+<div class="form">
+  {{> flash }}
+  <div class="container pad">
+    <h1 class="title-2">Hi, {{ closet.name.first }}.</h1>
+    <div class="password">
+      <p class="mar-top-24">Password</p>
+      <input class="mar-top-16" name="password" type="password" required />
+    </div>
+    <input type="submit" class="button mar-top-48" value="Enter">
+  </div>
+</div>
 </form>

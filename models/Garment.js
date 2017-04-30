@@ -7,6 +7,7 @@ var Types = keystone.Field.Types;
  */
 
 var Garment = new keystone.List('Garment', {
+  label: 'Items',
   drilldown: 'closet',
   sortable: true,
   sortContext: 'Closet:garments'
@@ -14,6 +15,7 @@ var Garment = new keystone.List('Garment', {
 
 Garment.add({
   name: {type: String, required: true, initial: true},
+  selected: {type: Boolean, required: false, default: false},
   sku: {type: String, required: true, initial: true, label: 'SKU'},
   supplier: {type: String, required: false},
   image: {
@@ -37,5 +39,5 @@ Garment.add({
   createdAt: {type: Date, default: Date.now}
 });
 
-Garment.defaultColumns = 'name, sku, size|15%, closet'
+Garment.defaultColumns = 'name, sku, size|15%, selected|15%, closet'
 Garment.register();

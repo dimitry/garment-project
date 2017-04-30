@@ -5,10 +5,20 @@ require('dotenv').config();
 // Require keystone
 var keystone = require('keystone');
 var handlebars = require('express-handlebars');
+var hbsLayouts = require('handlebars-layouts');
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
+
+var hbs = handlebars.create({
+  layoutsDir: 'templates/views/layouts',
+  partialsDir: 'templates/views/partials',
+  defaultLayout: 'default',
+  helpers: new require('./templates/views/helpers')(),
+  extname: '.hbs',
+});
+hbsLayouts.register(hbs.handlebars);
 
 keystone.init({
   'name': 'Garment Project',
@@ -20,13 +30,7 @@ keystone.init({
   'views': 'templates/views',
   'view engine': 'hbs',
 
-  'custom engine': handlebars.create({
-    layoutsDir: 'templates/views/layouts',
-    partialsDir: 'templates/views/partials',
-    defaultLayout: 'default',
-    helpers: new require('./templates/views/helpers')(),
-    extname: '.hbs',
-  }).engine,
+  'custom engine': hbs.engine,
 
   'auto update': true,
   'session': true,
@@ -67,7 +71,6 @@ keystone.Email.defaults.templateEngine = require('handlebars');
 keystone.set('nav', {
   static: 'static-pages',
   closets: ['closets', 'garments'],
-  enquiries: 'enquiries',
   users: 'users',
 });
 

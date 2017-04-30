@@ -1,1 +1,108 @@
-THIS IS A CLOSET {{ closet.id }}
+{{#content "header"}}
+  <header class="closet">
+    <div class="logo"><a href="/"><img src="/imgs/logo.svg"></a></div>
+    <div class="order">
+      {{#if isClosetNotified}}
+      <a class="button outline action-show-checkout" href="#">Items:&nbsp;<span id="itemCount">{{ totalSelectedGarments }}</span></a>
+      {{/if}}
+    </div>
+  </header>
+{{/content}}
+
+{{#content "js"}}
+  Main.garments = {{{ toJson garments }}};
+  Main.closetId = '{{ closet.id }}';
+  Main.initCheckout();
+  {{#if isClosetActiveNotified}}
+  Main.initCloset();
+  {{/if}}
+{{/content}}
+
+<div class="order-menu">
+  <div class="header">
+    <h1 class="title-2">Your Items</h1>
+    <a class="button icon" href="#"><img src="/imgs/close.svg"></a>
+  </div>
+  <div class="menu">
+    <div class="items">
+      {{#each selectedGarments}}
+        <div class="item" data-garment-id={{ id }}>
+          <div class="details">
+            <div class="item-img">
+              <img src="{{ image.url }}" />
+            </div>
+            <div class="item-info">
+              <p class="item-name">{{ name }}</p>
+              <p class="item-number mar-top-8">#{{ sku }}</p>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+  {{#if isClosetActiveNotified}}
+  <div class="send-order">
+    <a class="button action-submit" href="#">Send Order</a>
+  </div>
+  {{/if}}
+</div>
+
+<div class="intro fixed-header pad">
+  <div class="container">
+    <h1 class="title-1">Hi, {{ closet.name.first }}.</h1>
+    <p class="mar-top-24 mar-bot-24"><img src="/imgs/red-rule.svg" />
+    {{#if isClosetActiveNotified}}
+    <p class="large">Welcome to your new wardrobe.<br>Select the items you like, and we'll send them your way.</p>
+    {{else}}
+    <p class="large">Thanks for your order!<br>We'll get your items together and send them your way.</p>
+    {{/if}}
+  </div>
+</div>
+
+<div class="wardrobe pad">
+  <div class="items">
+    {{#each garments}}
+    <div class="item" data-garment-id="{{ id }}">
+      {{#if ../isClosetActiveNotified}}
+      <div class="container">
+      {{else}}
+        {{#if this.selected}}
+        <div class="container selected">
+        {{else}}
+        <div class="container">
+        {{/if}}
+      {{/if}}
+        <div class="item-img">
+          <img src="{{ image.url }}" />
+        </div>
+        <div class="item-info">
+          <p class="item-name">{{ name }}</p>
+          <p class="item-number mar-top-16">#{{ sku }}</p>
+          {{#if ../isClosetActiveNotified}}
+          <div class="button icon action-toggle"><img src="/imgs/add.svg" /></div>
+          {{else}}
+            {{#if this.selected}}
+            <div class="button icon action-toggle selected" disabled><img src="/imgs/selected.svg" /></div>
+            {{/if}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+<div class="item sample-item">
+  <div class="details">
+    <div class="item-img">
+      <img src="/imgs/closet/item-2.jpg" />
+    </div>
+    <div class="item-info">
+      <p class="item-name">Denim Dress</p>
+      <p class="item-number mar-top-8">#4387</p>
+    </div>
+  </div>
+  <div class="remove">
+    <a href="#" class="action-remove">Remove</a></p>
+  </div>
+</div>

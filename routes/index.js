@@ -42,9 +42,11 @@ exports = module.exports = function (app) {
 
   // Closet
   app.get('/closets/:closetId', middleware.requireCloset, middleware.requireClosetUser, routes.views.closet.index);
+  app.post('/closets/:closetId/submit', middleware.requireCloset, routes.views.closet.submit);
   app.get('/closets/:closetId/login', middleware.requireCloset, routes.views.closet.login);
   app.post('/closets/:closetId/login', middleware.requireCloset, routes.views.closet.loginProcess);
   app.get('/closets/:closetId/logout', middleware.requireCloset, routes.views.closet.logout);
+  app.post('/closets/:closetId/notify', middleware.requireUser, middleware.requireCloset, routes.views.closet.notify);
 
   // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
   // app.get('/protected', middleware.requireUser, routes.views.protected);

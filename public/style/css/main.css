@@ -161,6 +161,8 @@ ul.bullet {
   width: 100%;
   max-width: 200px;
   box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; }
@@ -488,11 +490,14 @@ header {
   z-index: 200;
   top: 0;
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  display: none; }
   @media (min-width: 62.5em) {
     .order-menu {
       width: 400px;
       right: 0; } }
+  .order-menu.active {
+    display: block; }
   .order-menu .header {
     height: 74px;
     position: fixed;
@@ -1243,7 +1248,8 @@ header {
         .form .error .close {
           position: absolute;
           right: 24px;
-          top: 24px; } }
+          top: 24px;
+          cursor: pointer; } }
   .form .container {
     background: #ffffff;
     display: -webkit-box;
@@ -1293,7 +1299,8 @@ header {
       width: 100%; }
     .form .container .button {
       width: 100%;
-      max-width: none; }
+      max-width: none;
+      line-height: 0; }
 
 .our-team .container {
   max-width: 910px; }
@@ -1602,5 +1609,8 @@ footer {
       footer .disclaimer-container .disclaimer p {
         max-width: 1200px;
         opacity: 0.8; }
+
+.sample-item {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */
