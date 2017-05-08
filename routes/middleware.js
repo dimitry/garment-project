@@ -91,10 +91,6 @@ exports.requireClosetUser = function (req, res, next) {
     res.redirect('/closets/' + res.locals.closet.id + '/login');
   }
 
-  console.log('---------------------------');
-  console.log('closetSignedIn:', req.session.closetSignedIn);
-  console.log('closetId:', req.session.closetId);
-
   if (!req.session.closetSignedIn) {
     return redirectToLogin();
   } else {
