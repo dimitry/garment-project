@@ -87,9 +87,13 @@ exports.requireCloset = function (req, res, next) {
 
 exports.requireClosetUser = function (req, res, next) {
   function redirectToLogin() {
-    req.flash('error', 'Please sign in to access this page.');
+    req.flash('error', {detail: 'Please sign in to access this page.'});
     res.redirect('/closets/' + res.locals.closet.id + '/login');
   }
+
+  console.log('---------------------------');
+  console.log('closetSignedIn:', req.session.closetSignedIn);
+  console.log('closetId:', req.session.closetId);
 
   if (!req.session.closetSignedIn) {
     return redirectToLogin();
